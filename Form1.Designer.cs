@@ -68,6 +68,8 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.viewBranchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteBranchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.statusStrip1.SuspendLayout();
             this.mainTabs.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -445,23 +447,37 @@
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.viewBranchToolStripMenuItem,
+            this.exportListToolStripMenuItem,
+            this.toolStripSeparator1,
             this.deleteBranchToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(148, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 98);
             // 
             // viewBranchToolStripMenuItem
             // 
             this.viewBranchToolStripMenuItem.Name = "viewBranchToolStripMenuItem";
-            this.viewBranchToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.viewBranchToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.viewBranchToolStripMenuItem.Text = "View Branch";
             this.viewBranchToolStripMenuItem.Click += new System.EventHandler(this.viewBranchToolStripMenuItem_Click);
             // 
             // deleteBranchToolStripMenuItem
             // 
             this.deleteBranchToolStripMenuItem.Name = "deleteBranchToolStripMenuItem";
-            this.deleteBranchToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.deleteBranchToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.deleteBranchToolStripMenuItem.Text = "Delete Branch";
             this.deleteBranchToolStripMenuItem.Click += new System.EventHandler(this.deleteBranchToolStripMenuItem_Click);
+            // 
+            // exportListToolStripMenuItem
+            // 
+            this.exportListToolStripMenuItem.Name = "exportListToolStripMenuItem";
+            this.exportListToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exportListToolStripMenuItem.Text = "Export List";
+            this.exportListToolStripMenuItem.Click += new System.EventHandler(this.exportListToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // Form1
             // 
@@ -537,6 +553,8 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem viewBranchToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteBranchToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exportListToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }
 

@@ -398,6 +398,37 @@ namespace branch_tidy
 
         #endregion
 
+        private void exportListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var sb = new StringBuilder();
+
+            var headers = dgBranches.Columns.Cast<DataGridViewColumn>();
+            sb.AppendLine(string.Join(",", headers.Select(column => "\"" + column.HeaderText + "\"").ToArray()));
+
+            foreach (DataGridViewRow row in dgBranches.Rows)
+            {
+                var cells = row.Cells.Cast<DataGridViewCell>();
+                sb.AppendLine(string.Join(",", cells.Select(cell => "\"" + cell.Value + "\"").ToArray()));
+
+            }
+
+            using (System.Windows.Forms.SaveFileDialog dialog = new System.Windows.Forms.SaveFileDialog())
+            {
+                dialog.Filter = "csv files (*.csv)|*csv";
+                dialog.FilterIndex = 1;
+                dialog.RestoreDirectory = true;
+                dialog.FileName = string.Format("{0}_{1}.csv", _UserProfile.username, "branch-tidy-export");
+                dialog.RestoreDirectory = true;
+
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    // Can use dialog.FileName
+                    System.IO.StreamWriter file = new System.IO.StreamWriter(dialog.FileName.ToString());
+                    file.WriteLine(sb.ToString());
+                    file.Close();
+                }
+            }
+        }
     }
 
 }
